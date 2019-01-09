@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "image":"./images/bike-route.png",
+        "clicked": false
+    },
+    {
+        "id": 2,
+        "image":"./images/hazard.png",
+        "clicked": false
+    },
+    {
+        "id": 3,
+        "image":"./images/hospital.png",
+        "clicked": false
+    },
+    {
+        "id": 4,
+        "image":"./images/keep-right.png",
+        "clicked": false
+    },
+    {
+        "id": 5,
+        "image":"./images/no-enter.png",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "image":"./images/no-pass.png",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "image":"./images/one-way-2.png",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "image":"./images/one-way.png",
+        "clicked": false
+    },
+    {
+        "id": 9,
+        "image":"./images/ped-crossing.png",
+        "clicked": false
+    },
+    {
+        "id": 10,
+        "image":"./images/phone.png",
+        "clicked": false
+    },
+    {
+        "id": 11,
+        "image":"./images/school-zone.png",
+        "clicked": false
+    },
+    {
+        "id": 12,
+        "image":"./images/signal.png",
+        "clicked": false
+    },
+    {
+        "id": 13,
+        "image":"./images/speed-bump.png",
+        "clicked": false
+    },
+    {
+        "id": 14,
+        "image":"./images/stop.png",
+        "clicked": false
+    },
+    {
+        "id": 15,
+        "image":"./images/yield.png",
+        "clicked": false
+    }
+]
