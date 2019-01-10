@@ -1,5 +1,14 @@
+.appWrapper {
+  margin: 10px auto;
+  max-width: 1500px;
+  justify-content: center;
+}
+
+
 .signcard {
-  width: 200px;
+  width: calc((100vmin - 30px)/2);
+  max-width: 260px;
+  min-width: 50px;
   height: auto;
   display: inline-block;
   padding: 5px;

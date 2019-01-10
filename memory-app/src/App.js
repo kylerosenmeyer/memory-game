@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import Card from "./components/card"
 import Container from "./components/container"
+import Row from "./components/row"
 import Jumbotron from "./components/jumbotron"
 import Navigation from "./components/navigation"
 import signs from "./signs.json"
 import "./App.css"
 
 class App extends Component {
+
+  
 
   state = {signs}
 
@@ -53,7 +56,7 @@ class App extends Component {
       } 
   }
 
-  //!Shuffle Logic
+  //!Shuffle Logic: This is the Fisher-Yates Shuffle Algorithm
   shuffle = (array) => {
     let currentIndex = array.length, temporaryValue, randomIndex
       while (0 !== currentIndex) {
@@ -81,15 +84,17 @@ class App extends Component {
         />
         <Jumbotron />
         <Container>
-          {signs.map((sign, key) => (
-            <Card id={sign.id}
-                  image={sign.image}
-                  clicked={sign.clicked}
-                  name={sign.name}
-                  clickSign={this.clickSign}
-                  key={key}
-            />
-          ))}
+          <Row row="row">
+            {signs.map((sign, key) => (
+              <Card id={sign.id}
+                    image={sign.image}
+                    clicked={sign.clicked}
+                    name={sign.name}
+                    clickSign={this.clickSign}
+                    key={key}
+              />
+            ))}
+          </Row>
         </Container>
       </div>
     );

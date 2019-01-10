@@ -6,7 +6,7 @@ class Card extends Component {
         console.log(`props: ${this.props}`)
         return(
             
-            <div className="card text-white signcard" 
+            <div className="card text-white signcard"
                  id={this.props.id}>
                 <img className="card-img-top" 
                      src={this.props.image} 

@@ -4,7 +4,7 @@ class Container extends Component {
 
     render() {
         return(
-            <div className="container-fluid">{this.props.children}</div>
+            <div className="container-fluid appWrapper">{this.props.children}</div>
         )
     }
 }
