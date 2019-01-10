@@ -1,14 +1,23 @@
 import React, {Component} from "react"
 
-function Card (props) {
+class Card extends Component {
 
-    console.log(`props: ${props}`)
-    return(
-        
-        <div className="card text-white bg-primary signcard" id={props.id}>
-            <img className="card-img-top" src={props.image} alt="image" />
-        </div>
-    )
+    render() {
+        console.log(`props: ${this.props}`)
+        return(
+            
+            <div className="card text-white signcard" 
+                 id={this.props.id}>
+                <img className="card-img-top" 
+                     src={this.props.image} 
+                     alt={this.props.name}
+                     clicked={this.props.clicked}
+                     onClick={() => this.props.clickSign(this.props.id, this.props.clicked)}
+                     
+                />
+            </div>
+        )
+    }
 }
 
 

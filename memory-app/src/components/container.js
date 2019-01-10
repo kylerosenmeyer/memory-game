@@ -1,10 +1,12 @@
-import React from "react"
+import React, {Component} from "react"
 
-function Container (props) {
+class Container extends Component {
 
-    return(
-        <div className="container-fluid">{props.children}</div>
-    )
+    render() {
+        return(
+            <div className="container-fluid">{this.props.children}</div>
+        )
+    }
 }
 
 export default Container 

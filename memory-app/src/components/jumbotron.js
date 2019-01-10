@@ -5,7 +5,7 @@ class Jumbotron extends Component {
         return(
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-3">One Time Traffic Signs</h1>
+                    <h1 className="display-3 center">One Time Traffic Signs</h1>
                 </div>
             </div>
         )
