@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "image":"./images/bike-route.png",
+        "clicked": "false",
+        "name": "bike-route"
+    },
+    {
+        "id": 2,
+        "image":"./images/hazard.png",
+        "clicked": "false",
+        "name": "hazard"
+    },
+    {
+        "id": 3,
+        "image":"./images/hospital.png",
+        "clicked": "false",
+        "name": "hospital"
+    },
+    {
+        "id": 4,
+        "image":"./images/keep-right.png",
+        "clicked": "false",
+        "name": "keep-right"
+    },
+    {
+        "id": 5,
+        "image":"./images/no-enter.png",
+        "clicked": "false",
+        "name": "no-enter"
+    },
+    {
+        "id": 6,
+        "image":"./images/no-pass.png",
+        "clicked": "false",
+        "name": "no-pass"
+    },
+    {
+        "id": 7,
+        "image":"./images/one-way-2.png",
+        "clicked": "false",
+        "name": "one-way-2"
+    },
+    {
+        "id": 8,
+        "image":"./images/one-way.png",
+        "clicked": "false",
+        "name": "one-way"
+    },
+    {
+        "id": 9,
+        "image":"./images/ped-crossing.png",
+        "clicked": "false",
+        "name": "ped-crossing"
+    },
+    {
+        "id": 10,
+        "image":"./images/phone.png",
+        "clicked": "false",
+        "name": "phone"
+    },
+    {
+        "id": 11,
+        "image":"./images/school-zone.png",
+        "clicked": "false",
+        "name": "school-zone"
+    },
+    {
+        "id": 12,
+        "image":"./images/signal.png",
+        "clicked": "false",
+        "name": "signal"
+    },
+    {
+        "id": 13,
+        "image":"./images/speed-bump.png",
+        "clicked": "false",
+        "name": "speed-bump"
+    },
+    {
+        "id": 14,
+        "image":"./images/stop.png",
+        "clicked": "false",
+        "name": "stop"
+    },
+    {
+        "id": 15,
+        "image":"./images/yield.png",
+        "clicked": "false",
+        "name": "yield"
+    }
+]
