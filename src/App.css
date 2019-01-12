@@ -1,3 +1,12 @@
+html, body {
+  font-family: 'Spicy Rice', cursive;
+}
+
+.nav, h3 {
+  font-family: 'Allerta Stencil', sans-serif;
+  text-align: center;
+}
+
 .appWrapper {
   margin: 10px auto;
   max-width: 1500px;
@@ -6,9 +15,9 @@
 
 
 .signcard {
-  width: calc((100vmin - 30px)/2);
+  width: calc((100vw - 250px)/5);
   max-width: 260px;
-  min-width: 50px;
+  min-width: 95px;
   height: auto;
   display: inline-block;
   padding: 5px;
@@ -23,10 +32,17 @@
   transform: translateY(-3);
 }
 
-.center {
+.signimg {
+  width: 100%;
+  height: auto;
+  margin: auto;  
+}
+
+.mainTitle {
   text-align: center;
   margin: auto;
-  padding-top: 50px;
+  padding-top: 30px;
+  font-size: 4em;
 }
 
 span {
@@ -49,6 +65,25 @@ span {
 
 .jumbotron-fluid {
   background-image: url("./images/hypnotize.png");
-  height: 250px;
+  height: 260px;
   border-bottom: 20px double rgb(92, 161, 207);
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out forwards;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0px)
+  }
+  33% {
+      transform: translateX(-3px)
+  }
+  66% {
+      transform: translateX(3px)
+  }
+  100% {
+      transform: translateX(0px)
+  }
 }

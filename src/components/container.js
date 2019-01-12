@@ -1,10 +1,12 @@
 import React, {Component} from "react"
 
 class Container extends Component {
-
+    
     render() {
         return(
-            <div className="container-fluid appWrapper">{this.props.children}</div>
+            <div className={"container-fluid appWrapper " + this.props.toggle}>
+            {this.props.children}
+            </div>
         )
     }
 }

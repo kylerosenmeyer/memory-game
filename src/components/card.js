@@ -3,12 +3,11 @@ import React, {Component} from "react"
 class Card extends Component {
 
     render() {
-        console.log(`props: ${this.props}`)
         return(
             
-            <div className="card text-white signcard"
+            <div className="signcard"
                  id={this.props.id}>
-                <img className="card-img-top" 
+                <img className="signimg" 
                      src={this.props.image} 
                      alt={this.props.name}
                      clicked={this.props.clicked}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Card from "./components/card"
 import Container from "./components/container"
-import Row from "./components/row"
 import Jumbotron from "./components/jumbotron"
 import Navigation from "./components/navigation"
 import signs from "./signs.json"
@@ -9,50 +8,44 @@ import "./App.css"
 
 class App extends Component {
 
-  
-
-  state = {signs}
+  sign = {array: signs}
 
   score = {
     userScore: 0,
     highScore: 0
   }
 
+  shake = {
+    animate: "noshake"
+  }
+
   //!Game Logic
   clickSign = (id, check) => {
-
-    let arrayID = id - 1
-    console.log(`arrayid: ${arrayID}`)
-    console.log(`clicked? ${check}`)
-
+      // for (let i=0; i<signs.length;i++) {
+      //   console.log(`${signs[i].clicked}`)
+      // }
+      // console.log("---------------------------------------")
       if ( check === "true" )  {
-      
-        console.log("Game Over!")
-        console.log(`Final Score: ${this.score.userScore}`)
-        this.score.userScore = 0
 
-        //*Reset Images
-        for ( let i=0; i<signs.length; i++) {
-          signs[i].clicked = "false"
-        }
-        let randomSigns = this.shuffle(signs)
-        this.setState({randomSigns})
+        this.score.userScore = 0
+        this.shake.animate = "shake"
+        this.toggleShake()
         this.updateScore()
+        this.sign.array.forEach((sign) => {sign.clicked = "false"})
+        this.setState(this.sign.array)
 
       } else if ( check === "false" ) {
 
-        signs[arrayID].clicked = "true"
+        this.sign.array[id].clicked = "true"
         this.score.userScore++
-        console.log(`score: ${this.score.userScore}`)
 
-        if ( this.score.userScore > this.score.highScore ) {
-          this.score.highScore++
-          console.log(`highscore: ${this.score.highScore}`)
-        }
+        if ( this.score.userScore > this.score.highScore ) {this.score.highScore++}
         
-        let randomSigns = this.shuffle(signs)
-        this.setState({randomSigns})
+        let randomSigns = this.shuffle(this.sign.array)
+        this.setState(randomSigns)
         this.updateScore()
+        this.shake.animate = "noshake"
+        this.toggleShake()
       } 
   }
 
@@ -70,10 +63,11 @@ class App extends Component {
   }
 
   //!Update Score
-  updateScore = () => {
-    console.log(`score updating: ${this.score.userScore}`)
-    this.setState(this.score)
-  }
+  updateScore = () => this.setState(this.score)
+
+  //!Shake!
+  toggleShake = () => this.setState(this.shake)
+
 
   render() {
     return (
@@ -83,9 +77,8 @@ class App extends Component {
                     updateScore={this.updateScore}
         />
         <Jumbotron />
-        <Container>
-          <Row row="row">
-            {signs.map((sign, key) => (
+        <Container toggle={this.shake.animate} shake={this.toggleShake}>
+            {this.sign.array.map((sign, key) => (
               <Card id={sign.id}
                     image={sign.image}
                     clicked={sign.clicked}
@@ -94,7 +87,6 @@ class App extends Component {
                     key={key}
               />
             ))}
-          </Row>
         </Container>
       </div>
     );
