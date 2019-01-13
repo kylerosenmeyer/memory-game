@@ -21,10 +21,7 @@ class App extends Component {
 
   //!Game Logic
   clickSign = (id, check) => {
-      // for (let i=0; i<signs.length;i++) {
-      //   console.log(`${signs[i].clicked}`)
-      // }
-      // console.log("---------------------------------------")
+      
       if ( check === "true" )  {
 
         this.score.userScore = 0
@@ -36,7 +33,8 @@ class App extends Component {
 
       } else if ( check === "false" ) {
 
-        this.sign.array[id].clicked = "true"
+        let index = this.sign.array.map( e => e.id ).indexOf(id)
+        this.sign.array[index].clicked = "true"
         this.score.userScore++
 
         if ( this.score.userScore > this.score.highScore ) {this.score.highScore++}
@@ -68,6 +66,11 @@ class App extends Component {
   //!Shake!
   toggleShake = () => this.setState(this.shake)
 
+  //!Center Signs
+  centerSigns = () => {
+    console.log(`double check margin: ${this.margin.marginLeft}`)
+    this.setState(this.margin)
+  }
 
   render() {
     return (
@@ -77,7 +80,11 @@ class App extends Component {
                     updateScore={this.updateScore}
         />
         <Jumbotron />
-        <Container toggle={this.shake.animate} shake={this.toggleShake}>
+        <Container toggle={this.shake.animate} 
+                   shake={this.toggleShake}
+                   style={this.margin}
+                   setMargin={this.centerSigns}
+        >
             {this.sign.array.map((sign, key) => (
               <Card id={sign.id}
                     image={sign.image}

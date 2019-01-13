@@ -2,29 +2,27 @@ html, body {
   font-family: 'Spicy Rice', cursive;
 }
 
-.nav, h3 {
+.score, h3 {
   font-family: 'Allerta Stencil', sans-serif;
   text-align: center;
 }
 
 .appWrapper {
-  margin: 10px auto;
+  width: 100vw;
   max-width: 1500px;
-  justify-content: center;
+  text-align: center;
 }
 
 
 .signcard {
-  width: calc((100vw - 250px)/5);
-  max-width: 260px;
-  min-width: 95px;
+  width: 240px;
   height: auto;
-  display: inline-block;
   padding: 5px;
-  margin: 20px;
+  margin: 15px;
   box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.4);
   transition: box-shadow 0.5s, transform 0.5s;
   background-color: rgb(92, 161, 207);
+  display: inline-block;
 }
 
 .signcard:hover {
@@ -34,8 +32,7 @@ html, body {
 
 .signimg {
   width: 100%;
-  height: auto;
-  margin: auto;  
+  height: auto; 
 }
 
 .mainTitle {
@@ -73,6 +70,14 @@ span {
   animation: shake 0.3s ease-in-out forwards;
 }
 
+.scoreLeft, .scoreRight {
+  padding: 10px;
+  display: inline-block;
+  font-size: 1.2em;
+  background-color: rgb(92, 161, 207);
+  color: rgb(251, 251, 251);
+}
+
 @keyframes shake {
   0% {
     transform: translateX(0px)
@@ -86,4 +91,42 @@ span {
   100% {
       transform: translateX(0px)
   }
+}
+
+@media only screen and (max-width: 700px) {
+  .mainTitle{
+    font-size: 2.5em;
+    padding-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #scorebar {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+  }
+
+  .scoreLeft {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .scoreRight {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .jumbotron-fluid {
+    height: 220px;
+  }
+
 }

@@ -4,10 +4,8 @@ class Jumbotron extends Component {
     render() {
         return(
             <div className="jumbotron jumbotron-fluid">
-                <div className="container">
-                    <h1 className="display-3 mainTitle">One Time Traffic Signs</h1>
-                    <h3>Click every sign to win, click a sign twice to lose.</h3>
-                </div>
+                <h1 className="display-3 mainTitle">One Time Traffic Signs</h1>
+                <h3>Click every sign to win, click a sign twice to lose.</h3>
             </div>
         )
     }
