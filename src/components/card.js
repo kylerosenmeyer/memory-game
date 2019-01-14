@@ -12,7 +12,6 @@ class Card extends Component {
                      alt={this.props.name}
                      clicked={this.props.clicked}
                      onClick={() => this.props.clickSign(this.props.id, this.props.clicked)}
-                     
                 />
             </div>
         )

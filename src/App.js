@@ -8,22 +8,28 @@ import "./App.css"
 
 class App extends Component {
 
+  //Bring in the Signs JSON array as an object property.
   sign = {array: signs}
 
+  //Set an object up to keep score.
   score = {
     userScore: 0,
     highScore: 0
   }
 
+  //Set an object to activate the shake animation.
   shake = {
     animate: "noshake"
   }
 
-  //!Game Logic
+  //!Game Logic - This controls the main functionality of the game.
   clickSign = (id, check) => {
-      
+      //*clickSign has to parameters:
+      //*id = the unique id of the sign
+      //*check = the data-click property of the sign. This is a string "true" or "false"
       if ( check === "true" )  {
-
+        //*If the sign has been clicked before, check will be true. 
+        //*Set the score to zero, shake the signs, and reset the sign statuses to "false"
         this.score.userScore = 0
         this.shake.animate = "shake"
         this.toggleShake()
@@ -33,12 +39,17 @@ class App extends Component {
 
       } else if ( check === "false" ) {
 
+        //*If the sign hasn't been clicked before, check will be false.
+        //*Get the index position of the sign from it's unique id.
+        //*Update the sign's status to true and increment the user score.
         let index = this.sign.array.map( e => e.id ).indexOf(id)
         this.sign.array[index].clicked = "true"
         this.score.userScore++
 
+        //*If the user score is now higher than the high score, increment the high score.
         if ( this.score.userScore > this.score.highScore ) {this.score.highScore++}
         
+        //*Shuffle the signs, update the scores, and make sure the "shake" is turned off.
         let randomSigns = this.shuffle(this.sign.array)
         this.setState(randomSigns)
         this.updateScore()
@@ -66,12 +77,6 @@ class App extends Component {
   //!Shake!
   toggleShake = () => this.setState(this.shake)
 
-  //!Center Signs
-  centerSigns = () => {
-    console.log(`double check margin: ${this.margin.marginLeft}`)
-    this.setState(this.margin)
-  }
-
   render() {
     return (
       <div className="App">
@@ -82,8 +87,6 @@ class App extends Component {
         <Jumbotron />
         <Container toggle={this.shake.animate} 
                    shake={this.toggleShake}
-                   style={this.margin}
-                   setMargin={this.centerSigns}
         >
             {this.sign.array.map((sign, key) => (
               <Card id={sign.id}
